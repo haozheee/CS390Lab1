@@ -73,7 +73,7 @@ class NeuralNetwork_2Layer():
                     W2New = self.W2 - L2A
                     self.W1 = W1New
                     self.W2 = W2New
-                loss = loss / mbs
+                loss = loss * mbs / xVals.shape[0]
                 print('Training epoch %d, Loss: %f' % (i, loss))
         else:
             for i in range(0, epochs):
